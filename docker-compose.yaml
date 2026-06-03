@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: ./server
+      dockerfile: Dockerfile
+    ports:
+      - "3001" # Coolify će interno mapirati ovo
+    volumes:
+      - backend-data:/app # Ovo osigurava da data.txt ne nestane kod svakog redeploya
+    environment:
+      - NODE_ENV=production
+
+  frontend:
+    build:
+      context: ./client
+      dockerfile: Dockerfile
+    ports:
+      - "80"
+    depends_on:
+      - backend
+
+volumes:
+  backend-data:
