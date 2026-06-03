@@ -1,4 +1,5 @@
 # Projekt: React Vite Kalkulator s Backend Spremanjem
+# Autor: DČ
 
 Ovaj projekt se sastoji od React frontend aplikacije i jednostavnog Node.js backend-a.
 
@@ -19,3 +20,10 @@ Ovaj projekt se sastoji od React frontend aplikacije i jednostavnog Node.js back
 ## Pokretanje
 1. **Server**: `cd server && npm install && node server.js`
 2. **Client**: `cd client && npm install && npm run dev`
+
+## GitHub
+https://github.com/cdrazen/Kalkulator_vite_node
+
+## Url
+beckend: https://t4cc4cgg8o0oso0k4csow0c8.46.225.181.185.sslip.io
+frontend: https://vkwkc8kcw084osw0ocwk4wcc.46.225.181.185.sslip.io

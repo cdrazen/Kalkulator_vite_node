@@ -12,10 +12,12 @@ services:
     environment:
       - NODE_ENV=production
 
-  frontend:
+ frontend:
     build:
       context: ./client
       dockerfile: Dockerfile
+      args:
+        - VITE_API_URL=${VITE_API_URL} # <-- OVA LINIJA JE KLJUČNA!
     ports:
       - "80"
     depends_on:
