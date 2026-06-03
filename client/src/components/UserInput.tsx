@@ -1,5 +1,9 @@
 import React, { useState } from 'react';
 
+// 1. Dohvaćamo varijablu iz okruženja (Vite koristi import.meta.env)
+// Ako varijabla ne postoji (npr. lokalno na PC-u), automatski koristi localhost
+const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3001';
+
 const UserInput: React.FC = () => {
   const [inputText, setInputText] = useState('');
   const [status, setStatus] = useState('');
@@ -9,7 +13,8 @@ const UserInput: React.FC = () => {
     if (!inputText) return;
 
     try {
-      const response = await fetch('http://localhost:3001/api/save', {
+      // 2. Zamjenjujemo hardkodirani URL s dinamičkim URL-om
+      const response = await fetch(`${API_URL}/api/save`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
